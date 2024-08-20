@@ -1,10 +1,10 @@
-package List.Tarefas;
+package List.OperacoesBasicas;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListaTarefas {
-     private List<Tarefa> tarefaList = new ArrayList<>();
+     private List<Tarefa> tarefaList;
 
      public ListaTarefas() {
           this.tarefaList = new ArrayList<>();
@@ -32,5 +32,25 @@ public class ListaTarefas {
 
      public void obterDescricoesTarefas(){
           System.out.println(tarefaList);
+     }
+
+     public static void main(String[] args) {
+          ListaTarefas listaTarefas = new ListaTarefas();
+
+          System.out.println("número total de tarefas: " + listaTarefas.obterNumeroTotalTarefas());
+
+          listaTarefas.adicionarTarefa("tarefa 1");
+          listaTarefas.adicionarTarefa("tarefa 1");
+          listaTarefas.adicionarTarefa("tarefa 2");
+
+          System.out.println("número total de tarefas: " + listaTarefas.obterNumeroTotalTarefas());
+
+          listaTarefas.reomverTarefa("Tarefa 1");
+
+          System.out.println("número total de tarefas: " + listaTarefas.obterNumeroTotalTarefas());
+
+          listaTarefas.adicionarTarefa("tarefa 3");
+
+          listaTarefas.obterDescricoesTarefas();
      }
 }
